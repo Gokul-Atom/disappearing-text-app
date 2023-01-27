@@ -1,5 +1,5 @@
 import sys
-from tkinter import Tk, Label, Text, Frame, Scale, END, Scrollbar
+from tkinter import Tk, Label, Text, Frame, Scale, END, Scrollbar, WORD
 
 TIMEOUT = 5
 BG_COLOR = "#404040"
@@ -47,7 +47,7 @@ label_words = Label(mainframe, text="Words: 0", font=("", 20, "bold"), bg=BG_COL
 label_characters = Label(mainframe, text="Characters: 0", font=("", 20, "bold"), bg=BG_COLOR, fg="#ccc")
 scale = Scale(mainframe, from_=0, to=TIMEOUT, orient="h", resolution=0.01, tickinterval=1, length=600, bg="green", fg="#ccc", troughcolor=BG_COLOR, highlightthickness=0, font=("", 12, "bold"))
 scrollbar = Scrollbar(mainframe, width=20)
-text = Text(mainframe, bg="#303030", fg="#fff", insertbackground="white", font=("verdana", 15))
+text = Text(mainframe, bg="#303030", fg="#fff", insertbackground="white", font=("verdana", 15), wrap=WORD)
 
 text.config(yscrollcommand=scrollbar.set)
 scrollbar.config(command=text.yview)
